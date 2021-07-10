@@ -22,6 +22,15 @@ recognition.addEventListener('result',(e) => {
             p.innerText='Hi';
             texts.appendChild(p);
         }
+        if (
+            text.includes("what's your name") ||
+            text.includes("what is your name")
+          ) {
+            p = document.createElement("p");
+            p.classList.add("replay");
+            p.innerText = "My Name is Sujon";
+            texts.appendChild(p);
+          }
     }
    
     console.log(e);
