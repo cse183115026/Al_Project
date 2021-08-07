@@ -15,22 +15,30 @@ recognition.addEventListener('result',(e) => {
 
     p.innerText =text;
     texts.appendChild(p);
+
     if(e.results[0].isFinal){
         if(text.includes('hello')){
             p=document.createElement('p');
             p.classList.add('replay');
-            p.innerText='Hi';
+            p.innerText = 'Hi';
             texts.appendChild(p);
         }
-        if (
-            text.includes("what's your name") ||
-            text.includes("what is your name")
-          ) {
-            p = document.createElement("p");
-            p.classList.add("replay");
-            p.innerText = "My Name is Sujon";
+        if(text.includes('what is your name') || text.includes("what's your name")){
+            p=document.createElement('p');
+            p.classList.add('replay');
+            p.innerText = 'My Name is Sujon,Your?';
             texts.appendChild(p);
-          }
+        }
+        if(text.includes('open my youtube channel')){
+            p=document.createElement('p');
+            p.classList.add("replay");
+            p.innerText = "Opening youtube Channel";
+            texts.appendChild(p);
+            console.log("opening youtube");
+            window.open("https://www.youtube.com");
+        }
+
+        p =document.createElement('p');
     }
    
     console.log(e);
@@ -40,3 +48,4 @@ recognition.addEventListener('end', ()=>{
     recognition.start();
 })
 
+recognition.start();
